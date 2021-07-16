@@ -303,14 +303,12 @@
 						"partitionOption": "None"
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
+						"type": "ParquetSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"type": "ParquetWriteSettings"
 						}
 					},
 					"enableStaging": false,
@@ -353,18 +351,8 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "ReportDataSink",
-						"type": "DatasetReference",
-						"parameters": {
-							"keyVaultName": {
-								"value": "@pipeline().parameters.keyVaultName",
-								"type": "Expression"
-							},
-							"datalakeAccountName": {
-								"value": "@pipeline().parameters.datalakeAccountName",
-								"type": "Expression"
-							}
-						}
+						"referenceName": "tripReport",
+						"type": "DatasetReference"
 					}
 				]
 			}
