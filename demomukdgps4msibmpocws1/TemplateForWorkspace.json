@@ -323,7 +323,7 @@
 					},
 					"SynapseWorkspaceName": {
 						"type": "string",
-						"defaultValue": "demomukdgps4msibmpocws1.workspaceName.database.windows.net"
+						"defaultValue": "demomukdgps4msibmpocws1.database.windows.net"
 					},
 					"SQLDedicatedPoolName": {
 						"type": "string",
@@ -353,6 +353,7 @@
 				"[concat(variables('workspaceId'), '/datasets/faresDataSource')]",
 				"[concat(variables('workspaceId'), '/datasets/faresDataSink')]",
 				"[concat(variables('workspaceId'), '/dataflows/tripFaresDataTransformations')]",
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
 				"[concat(variables('workspaceId'), '/datasets/azureSynapseAnalyticsSchema')]"
 			]
 		},
