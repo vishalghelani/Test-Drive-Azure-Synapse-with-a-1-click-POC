@@ -1,0 +1,27 @@
+{
+	"name": "tripReport",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "TripFaresDataLakeStorageLinkedService",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"keyVaultName": "kvdemomukdgps4msibmpoc",
+				"datalakeAccountName": "demomukdgps4msibmpoc"
+			}
+		},
+		"folder": {
+			"name": "TripFareDatasets"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "golden-data",
+				"fileSystem": "public"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
