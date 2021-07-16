@@ -1,5 +1,5 @@
 {
-	"name": "TripParquetFile",
+	"name": "tripParquetFile",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "TripFaresDataLakeStorageLinkedService",
