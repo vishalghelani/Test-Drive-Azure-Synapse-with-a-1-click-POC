@@ -3,7 +3,17 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "TripFaresDataLakeStorageLinkedService",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"keyVaultName": {
+					"value": "@dataset().keyVaultName",
+					"type": "Expression"
+				},
+				"datalakeAccountName": {
+					"value": "@dataset().datalakeAccountName",
+					"type": "Expression"
+				}
+			}
 		},
 		"folder": {
 			"name": "TripFareDatasets"
