@@ -278,7 +278,7 @@
 				}
 			},
 			{
-				"name": "Copy data1",
+				"name": "Writing report data to Azure Data Lake",
 				"type": "Copy",
 				"dependsOn": [
 					{
