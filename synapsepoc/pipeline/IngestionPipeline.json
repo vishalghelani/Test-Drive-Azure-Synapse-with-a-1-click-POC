@@ -75,7 +75,7 @@
 				]
 			},
 			{
-				"name": "Ingest data from NoSQL",
+				"name": "Export Cosmos DB into Data Lake",
 				"type": "Copy",
 				"dependsOn": [
 					{
@@ -232,7 +232,7 @@
 				]
 			},
 			{
-				"name": "Ingest data into Data Lake",
+				"name": "Export SQL DB into Data Lake",
 				"type": "Copy",
 				"dependsOn": [
 					{
