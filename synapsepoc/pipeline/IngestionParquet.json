@@ -347,6 +347,70 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Export SQL DB into Data Lake in Parquet",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Load data into SQL DB",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlDWSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "azureSynapseTripTable",
+						"type": "DatasetReference",
+						"parameters": {
+							"SchemaName": "@pipeline().parameters.SchemaName",
+							"SynapseWorkspaceName": "@pipeline().parameters.SynapseWorkspaceName",
+							"SQLDedicatedPoolName": "@pipeline().parameters.SQLDedicatedPoolName",
+							"keyVaultName": "@pipeline().parameters.keyVaultName",
+							"SQLLoginUsername": "@pipeline().parameters.SQLLoginUsername"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "tripParquetFile",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"parameters": {
