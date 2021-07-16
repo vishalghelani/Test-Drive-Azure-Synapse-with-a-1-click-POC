@@ -31,8 +31,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "fares-data.csv",
-				"folderPath": "analytics-data",
+				"fileName": "faresreport.csv",
+				"folderPath": "golden-data",
 				"fileSystem": "public"
 			},
 			"columnDelimiter": ",",
