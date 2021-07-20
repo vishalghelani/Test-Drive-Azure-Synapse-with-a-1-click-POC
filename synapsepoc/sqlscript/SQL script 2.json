@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 2",
+	"properties": {
+		"content": {
+			"query": "CREATE DATABASE SCOPED CREDENTIAL [sqlondemand]\nWITH IDENTITY='SHARED ACCESS SIGNATURE',  \nSECRET = 'sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupx&se=2021-07-29T23:48:58Z&st=2021-07-20T15:48:58Z&spr=https&sig=caR6pb25nBCc5faE1HtbYwGLy%2BaDMDAqq4m9l5OkfW4%3D'",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "demomukdgps4msibmpocws1p1",
+				"databaseName": "demomukdgps4msibmpocws1p1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
